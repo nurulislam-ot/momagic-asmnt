@@ -1,6 +1,6 @@
 class CategoryServiceClass {
   async getCategories() {
-    const response = await fetch("https://fakestoreapi.com/products/categories")
+    const response = await fetch("https://momagic-backend-asmnt.vercel.app/categories")
     return response.json() as Promise<string[]>
   }
 }

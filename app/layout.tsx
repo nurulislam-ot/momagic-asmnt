@@ -20,6 +20,7 @@ export default function RootLayout(
     children: React.ReactNode
     recent_products: React.ReactNode
     categories: React.ReactNode
+    best_deals: React.ReactNode
   }>
 ) {
   return (
@@ -29,6 +30,7 @@ export default function RootLayout(
         {props.children}
         {props.categories}
         {props.recent_products}
+        {props.best_deals}
         <Footer />
       </body>
     </html>

@@ -6,8 +6,9 @@ import {
   ShoppingCartIcon,
   UserIcon,
 } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
+import Image from "next/image"
+
 import FacebookIcon from "./icons/facebook"
 import TwitterIcon from "./icons/twitter"
 
