@@ -2,7 +2,9 @@ import { Product } from "../types/product"
 
 class ProductServiceClass {
   async getProducts() {
-    const response = await fetch("https://momagic-backend-asmnt.vercel.app/products")
+    const response = await fetch(
+      "https://momagic-backend-asmnt.vercel.app/products"
+    )
     const data = (await response.json()) as Product[]
     return data.slice(0, 10)
   }
@@ -15,6 +17,14 @@ class ProductServiceClass {
     )
     const data = (await response.json()) as Product[]
     return data.slice(0, 5)
+  }
+
+  async getProductById(id: string) {
+    const response = await fetch(
+      `https://momagic-backend-asmnt.vercel.app/products/${id}`
+    )
+    const data = (await response.json()) as Product
+    return data
   }
 }
 

@@ -2,6 +2,7 @@ import Image from "next/image"
 import { cn } from "@/app/utilities/cn"
 import { type Product } from "@/app/types/product"
 import { shrinkString } from "@/app/utilities/shrink_string"
+import Link from "next/link"
 
 export default function ProductBox({
   product,
@@ -17,9 +18,11 @@ export default function ProductBox({
       })}
     >
       <div>
-        <h2 className='text-lg font-semibold'>
-          {shrinkString(product.title, 25)}
-        </h2>
+        <Link href={`/${product.id}`}>
+          <h2 className='text-lg font-semibold'>
+            {shrinkString(product.title, 25)}
+          </h2>
+        </Link>
         <p className='text-xl text-primary'>RS {product.price}</p>
         <p className='line-through text-gray-700'>RS {product.price - 10}</p>
       </div>

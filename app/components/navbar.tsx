@@ -18,12 +18,14 @@ export default function Navbar() {
       <div className='bg-[#03484D] py-3'>
         <div className='container mx-auto flex items-center justify-between'>
           <div className='flex items-center gap-5'>
-            <Image
-              src='/winstore-logo.png'
-              alt='winstore logo'
-              width={120}
-              height={40}
-            />
+            <Link href='/'>
+              <Image
+                src='/winstore-logo.png'
+                alt='winstore logo'
+                width={120}
+                height={40}
+              />
+            </Link>
             <div className='md:flex bg-white h-10 text-gray-600 rounded-lg hidden'>
               <select className='border-r px-4'>
                 <option value='all'>All Categories</option>

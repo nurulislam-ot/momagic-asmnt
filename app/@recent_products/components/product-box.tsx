@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Product } from "@/app/types/product"
 import { shrinkString } from "@/app/utilities/shrink_string"
+import Link from "next/link"
 
 type ProductBoxProps = {
   product: Product
@@ -10,7 +11,9 @@ export default function ProductBox({ product }: ProductBoxProps) {
   return (
     <div className='flex flex-col border border-gray-300 p-4 gap-3'>
       <p className='text-sm'>Bin Bakar Electronics</p>
-      <h2 className='text-[#034E53]'>{shrinkString(product.title, 18)}</h2>
+      <Link href={`/${product.id}`}>
+        <h2 className='text-[#034E53]'>{shrinkString(product.title, 18)}</h2>
+      </Link>
       <Image
         alt={product.title}
         src={product.image}
