@@ -1,5 +1,8 @@
+"use client"
+
 import ProductBox from "./product-box"
 import { Product } from "@/app/types/product"
+import { Swiper, SwiperSlide } from "swiper/react"
 
 type ProductsProps = {
   products: Product[]
@@ -7,10 +10,12 @@ type ProductsProps = {
 
 export default function Products({ products }: ProductsProps) {
   return (
-    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 container mx-auto py-10'>
+    <Swiper slidesPerView={5} spaceBetween={32}>
       {products.map((product) => (
-        <ProductBox key={product.id} product={product} />
+        <SwiperSlide key={product.id}>
+          <ProductBox product={product} />
+        </SwiperSlide>
       ))}
-    </div>
+    </Swiper>
   )
 }

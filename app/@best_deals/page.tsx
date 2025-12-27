@@ -6,9 +6,10 @@ export default async function BestDeals() {
   return (
     <section>
       <div className='container mx-auto'>
-        <h2 className='text-3xl'>
+        <h2 className='text-2xl font-bold mb-6'>
           <span className='text-primary'>Best</span> Deals
         </h2>
+
         <Products products={products} />
       </div>
     </section>
